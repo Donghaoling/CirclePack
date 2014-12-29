@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+	
+    <style type="text/css">
+
+		text {
+		  font-size: 11px;
+		  pointer-events:none;
+		  z-index:31;
+		}
+
+		text.parent {
+		  fill: #1f77b4;
+		  font-size: 13px;
+		  font-weight:700;
+		  z-index:31;
+		}
+
+		circle {
+		  fill: rgb(248,97,23);
+		  fill-opacity:1;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		
+		circle.sportschild {
+		  fill:RGB(45,45,227);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		
+		circle.artschild {
+		  fill:RGB(248,23,71);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		
+		circle.bookschild {
+		  fill:RGB(206,51,164);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		
+		circle.nyregionchild {
+		  fill:RGB(0,153,37);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		
+		circle.worldchild {
+		  fill:rgb(248,97,23);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		
+		circle.businesschild {
+		  fill:RGB(143,11,21);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+
+		circle.parent {
+		  fill: RGB(215,201,201);
+		  fill-opacity: 0.7;
+		  stroke: steelblue;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		}
+		circle.findit{
+		  fill:RGB(244,11,13);
+		  fill-opacity:0.7;
+		  stroke: #999;
+		  stroke-width: .5px;
+		  pointer-events: all;
+		  stroke-width: .5px;
+		  cursor:pointer;
+		  z-index:30;
+		  stroke: #ff7f0e;
+		  stroke-width: 1px;
+		 }
+		
+		
+		circle:hover {
+		  fill-opacity: .9;
+		  stroke: #ff7f0e;
+		  stroke-width: 1px;
+		  z-index:30;
+		}
+
+		circle.child {		 
+		  cursor:pointer;
+		  z-index:30;
+		}
+		circle.child:hover {
+		  fill-opacity: .9;
+		  stroke: #ff7f0e;
+		  stroke-width: 1px;
+		  z-index:30;
+		}
+		
+		circle.business{
+			fill:RGB(157,61,46);
+			fill-opacity:0.7;
+			z-index:30;
+		}
+		circle.business:hover{
+			fill-opacity:.9;
+			z-index:30;
+		}
+		circle.world{
+			fill:RGB(244,226,108);
+			fill-opacity:0.7;
+			z-index:30;
+		}
+		circle.world:hover{
+			fill-opacity:.9;
+			z-index:30;
+		}
+		
+		circle.nyregion{
+			fill:RGB(18,163,93);
+			fill-opacity:0.7;
+			z-index:30;
+		}
+		circle.nyregion:hover{
+			fill-opacity:.9;
+			z-index:30;
+		}
+		circle.arts{
+			fill:RGB(163,56,218);
+			fill-opacity:0.7;
+			z-index:30;
+		}
+		circle.arts:hover{
+			fill-opacity:.9;
+			z-index:30;
+		}
+		circle.books{
+			fill:RGB(244,148,182);
+			fill-opacity:0.7;
+			z-index:30;
+		}
+		circle.books:hover{
+			fill-opacity:.9;
+			z-index:30;
+		}
+		
+		circle.sports{
+			fill:RGB(51,105,232);
+			fill-opacity:0.7;
+			z-index:30;
+		}
+		circle.sports:hover{
+			fill-opacity:.9;
+			z-index:30;
+		}
+		
+		body > ul {
+			width: 500px;
+			height: 400px;
+			margin: 40px auto 0;
+			position:absolute;
+			top:300px;
+			left:800px;
+			z-index:40
+		
+		}
+		
+		</style>
+	<script type="text/javascript" src="js/timeline.js"></script>
+	<link rel="stylesheet" href="TBase.css">
+	<link rel="stylesheet" href="TAMenu.css">
+    <script type="text/javascript" charset="UTF-8" src="js/prefixfree.min.js"></script>
+	
+	</head>
+	
+	<body> 
+	
+		
+		<table class="data" border = "0" id = "datatable" onclick=topicBack()>
+			
+				<tr>
+					<td > Topic Word1 </td>
+					<td id="topicword1" class="words"></td> 
+				</tr>
+				<tr>
+					<td>  Topic Word2 </td>
+					<td id="topicword2" class="words"></td> 
+				</tr>
+				<tr>
+					<td >  Topic Word3 </td>
+					<td id="topicword3" class="words">   </td> 
+				</tr>
+				<tr>
+					<td >  Topic Word4 </td>
+					<td id="topicword4" class="words"></td> 
+				</tr>
+				<tr>
+					<td >  Topic Word5 </td>
+					<td id="topicword5" class="words"></td> 
+				</tr>
+				<tr>
+					<td >  Topic Word6 </td>
+					<td id="topicword6" class="words"></td> 
+				</tr>
+				<tr>
+					<td >  Topic Word7 </td>
+					<td id="topicword7" class="words"></td> 
+				</tr>
+		</table>
+		<a id="ss" href="statistic.html">s</a>
+		<div id="timeline"><p  id="month_word">month</p>
+			<img  id = "timeline_pic" src="picture/timeline.png" />
+			
+			<p onclick="mon1()" onmouseover="" onmouseout="" class="month" id="month1">1</p>
+			<img onclick="" class="points" id = "point1" src="picture/1.png" />
+			<img  class="talkpic" id = "talkdia1" src="picture/talk.png" />
+						 
+			<p onclick="mon2()" class="month" id="month2">2</p> 
+			<img onclick="" class="points" id = "point2" src="picture/2.png" />
+			
+			<p onclick="mon3()" class="month" id="month3">3</p>
+			<img onclick="" class="points" id = "point3" src="picture/3.png" />
+			 
+			<p onclick="mon4()" class="month" id="month4">4</p>
+			<img onclick="" class="points" id = "point4" src="picture/4.png" />
+			 
+			<p onclick="mon5()" class="month" id="month5">5</p>
+			<img onclick="" class="points" id = "point5" src="picture/5.png" />
+			 
+			<p onclick="mon6()" class="month" id="month6">6</p>
+			<img onclick="" class="points" id = "point6" src="picture/6.png" />
+			 
+			<p onclick="mon7()" class="month" id="month7">7</p>
+			<img onclick="" class="points" id = "point7" src="picture/7.png" />
+			 
+			<p onclick="mon8()" class="month" id="month8">8</p>
+			<img onclick="" class="points" id = "point8" src="picture/8.png" />
+			 
+			<p onclick="mon9()" class="month" id="month9">9</p>
+			<img onclick="" class="points" id = "point9" src="picture/9.png" />
+			 
+			<p onclick="mon10()" class="month" id="month10">10</p>
+			<img onclick="" class="points" id = "point10" src="picture/10.png" />
+			 
+			<p onclick="mon11()" class="month" id="month11">11</p>
+			<img onclick="" class="points" id = "point11" src="picture/11.png" />
+			 
+			<p onclick="mon12()" class="month" id="month12">12</p>
+			<img onclick="" class="points" id = "point12" src="picture/12.png" />
+					
+		</div>
+		<div class="play_pic" onclick="play()" >play</div>
+		<p id="wwords">words:<input id="findwordtext" type="text" name="wordtofind"/></p>
+		<input id="findwordsubmit" type="submit" value="go" onClick="return gotofind();"/>
+		
+		
+		
+		<ul id="docdisplay" class="TAMenu TAMenuResize">
+		<li>
+			<input type="radio" name="radio-set" checked="checked" />
+			<a id="doctitle1" href="#">Document1 </a>
+			<ul>
+				<li id="docu1"> 
+				</li>
+				
+			</ul>
+		</li>
+		<li>
+			<input type="radio" name="radio-set"/>
+			<a id="doctitle2" href="#">Document2 </a>
+			<ul>
+				<li id="docu2"></li>
+				
+			</ul>
+		</li>
+		<li>
+			<input type="radio" name="radio-set"/>
+			<a id="doctitle3" href="#">Document3</a>
+			<ul>
+				<li id="docu3"></li>
+			</ul>
+		</li>
+		<li>
+			<input type="radio" name="radio-set"/>
+			<a id="doctitle4" href="#">Document4</a>
+			<ul>
+				<li id="docu4"></li>
+				
+			</ul>
+		</li>
+	</ul>
+
+		<script type="text/javascript" src="d3/d3.js"></script>
+		<script type="text/javascript" src="d3/d3.layout.js"></script>
+		<script type="text/javascript" src="http://cdn.bang5mai.com/upload/plugin/assets/main/js/jquery-highcharts.js"></script> 
+		<script type="text/javascript" src="js/showData.js"></script>
+		<script type = "text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+		
+		<script type="text/javascript">
+
+	var w = 1080,
+		h = 800,
+		r = 620,   //调整圆的半径
+		x = d3.scale.linear().range([0, r]),
+		y = d3.scale.linear().range([0, r]),
+		node,
+		root;
+
+	var pack = d3.layout.pack()
+		.size([r, r])
+		.value(function(d) {return d.size; })
+	window.vis=vis;
+	var vis = d3.select("body").insert("svg:svg", "h2")
+		.attr("width", w)
+		.attr("height", h)
+	  .append("svg:g")
+		.attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
+	var docs;
+//	var doccontents;
+
+
+
+	var docnums;
+	var docsizes;
+	var topics;
+	window.topics=topics;
+	d3.json("docnum.json", function(data) {
+		docnums=data;
+	});
+	function init(filename,topicfilename,docfilename,documentfile,month){
+		d3.json("docsize"+month+".json",function(datasize){
+		d3.json(filename, function(data) {
+		d3.json(docfilename,function(datadoc){
+		d3.json(topicfilename,function(datatopics){
+//		d3.json(documentfile,function(datacontent){
+		/*var docs=[
+			{"name":"",
+			"doc1":"",
+			"doc2":"",
+			"doc3":"",
+			"doc4":""
+			}];*/
+		docsizes=datasize;
+		window.docsizes=docsizes;
+		window.datadoc=datadoc;
+		docs=datadoc;
+		window.docs=docs;
+		topics=datatopics;
+//		doccontents=datacontent;
+		/*$.getJSON(docfilename,function(data){docs[0]["name"]=data[0]["name"];});
+		console.log(docs);*/
+			vis.selectAll("circle").remove();
+			vis.selectAll("text").remove();
+			node = root = data;
+
+		  var nodes = pack.nodes(root);
+
+		  vis.selectAll("circle")
+			  .data(nodes)
+			.enter().append("svg:circle")
+			  //.attr("class", function(d) { return d.children ? "parent" : "child"; })
+			  .attr("class", function(d) {if(d.name=="business") return "business";
+			  else  if(d.name=="world"&&d.children) return "world";
+			  else if(d.name=="nyregion"&&d.children) return "nyregion";
+			  else if(d.name=="arts"&&d.children) return "arts"; 
+			  else if(d.name=="books"&&d.children) return "books"; 
+			  else if(d.name=="sports"&&d.children) return "sports"; 
+			  else if(!d.children&&d.parent.name=="sports") return "sportschild";
+			  else if(!d.children&&d.parent.name=="books")   return "bookschild";
+			  else if(!d.children&&d.parent.name=="nyregion")   return "nyregionchild";
+			  else if(!d.children&&d.parent.name=="business")  return "businesschild";
+			  else if(!d.children&&d.parent.name=="world")  return "worldchild";
+			  else if(!d.children&&d.parent.name=="arts")  return "artschild";
+ 			  else return d.children ? "parent" : "child";})
+			  .attr("cx", function(d) { return d.x; })
+			  .attr("cy", function(d) { return d.y; })
+			  .attr("r", function(d) { return d.r; })
+			  .attr("id",function(d){if(d.parent) return d.parent.name;})
+			  .on("click", function(d) { return zoom(node == d ? root : d,month); })
+			  .on("mouseover", function(d) { return showMore(d,topicfilename);});//鼠标放上去以后显示更多的主题词
+		  
+		  
+		  vis.selectAll("text")
+			  .data(nodes)
+			.enter().append("svg:text")
+			  .attr("class", function(d) { return d.children ? "parent" : "child"; })
+			  .attr("x", function(d) { return d.x; })
+			  .attr("y", function(d) { return d.y; })
+			  .attr("dy", ".35em")
+			  .attr("text-anchor", "middle")
+			  .style("opacity", function(d) { return d.r > 20 ? 1 : 0; })
+			  .text(function(d) { 				
+				var scircle=d.name;						    
+					/*window.docs=docs;										
+					for(var j=0;j<docs.length;j++){						
+						if(d.name==docs[j]["name"]){						
+							for(var i=1;i<5;i++){
+								var sdoc="doc"+i;
+								window.sdoc=sdoc;
+								scircle=scircle+docs[j][sdoc];
+								window.sscircle=scircle;
+								//console.log("dd");
+							}
+						}
+					}				
+				window.scircle=scircle;*/
+				return scircle; })
+				//.style("opacity", function(d) { if(d.name=="business"||d.name=="arts"||d.name=="nyregion"||d.name=="world"||d.name=="sports"||d.name=="books"||d.r>200) return 1;else return 0;});
+//			d3.select(window).on("click", function() { zoomwin(root); });//点击后节点放大});
+//			find($("#findword").val());
+		});
+		});
+		});
+		});
+	}
+	window.init=init;
+    init("results1.json","topics1.json","doctitles1.json","documents1.json",1);
+	
+    function mon1(){
+		
+		console.log("clicked");
+		init("results1.json","topics1.json","doctitles1.json","documents1.json",1);				
+	}
+	function mon2(){		
+		console.log("clicked");
+		init("results2.json","topics2.json","doctitles2.json","documents2.json",2);				
+	}
+	function mon3(){		
+		console.log("clicked");
+		init("results3.json","topics3.json","doctitles3.json","documents3.json",3);				
+	}
+	function mon4(){		
+		console.log("clicked");
+		init("results4.json","topics4.json","doctitles4.json","documents4.json",4);				
+	}
+	function mon5(){		
+		console.log("clicked");
+		init("results5.json","topics5.json","doctitles5.json","documents5.json",5);				
+	}
+	function mon6(){		
+		console.log("clicked");
+		init("results6.json","topics6.json","doctitles6.json","documents6.json",6);				
+	}
+	function mon7(){		
+		console.log("clicked");
+		init("results7.json","topics7.json","doctitles7.json","documents7.json",7);				
+	}
+	function mon8(){		
+		console.log("clicked");
+		init("results8.json","topics8.json","doctitles8.json","documents8.json",8);				
+	}
+	function mon9(){		
+		console.log("clicked");
+		init("results9.json","topics9.json","doctitles9.json","documents9.json",9);				
+	}
+	function mon10(){		
+		console.log("clicked");
+		init("results10.json","topics10.json","doctitles10.json","documents10.json",10);				
+	}
+	function mon11(){		
+		console.log("clicked");
+		init("results11.json","topics11.json","doctitles11.json","documents11.json",11);				
+	}
+	function mon12(){		
+		console.log("clicked");
+		init("results12.json","topics12.json","doctitles12.json","documents12.json",12);				
+	}
+/*	function talk1(){
+		//alert("a");
+		console.log("a");
+		$("#talkdia1").show();
+	}*/
+/*	function talkout1(){
+		$("#talkdia1").hide();
+	}*/
+	
+    function showMore(d,topicfilename) {
+        
+        lookForTopic(d,topicfilename);
+    }
+    
+    /*var topics;
+    d3.json("topics.json", function (data) {//剩余的topic全部都读到topics里
+        topics = data;
+		console.log(data);
+		console.log(topics);
+		window.topics=topics;
+		
+    });*/
+    
+	function timechanged(t){
+		
+	}
+	
+    function lookForTopic(d,topicfilename) {
+//		d3.json(topicfilename, function (data) {//剩余的topic全部都读到topics里
+//			topics = data;
+			//console.log(topics.length);
+			//console.log(topics);
+			
+			window.topics=topics;	
+			var topic=null;
+			//console.log(d.name);
+			for(var i=0;i<topics.length;i++){
+				//console.log(i);
+				//console.log(topics[i]);
+				if(d.name==topics[i]["name"]){
+					
+					topic=topics[i];
+					break;
+				}
+				
+			}
+			//console.log(topic);	
+			showTopic(topic);
+					
+//		});
+    }
+    
+    function showTopic(topic)
+    {
+        // div 
+		//console.log(topic.name);
+		//console.log(topic.topicword1);
+		$("#topicword1").text(topic.topicword1);
+		$("#topicword2").text(topic.topicword2);
+		$("#topicword3").text(topic.topicword3);
+		$("#topicword4").text(topic.topicword4);
+		$("#topicword5").text(topic.topicword5);
+		$("#topicword6").text(topic.topicword6);
+		$("#topicword7").text(topic.topicword7);
+		//$("#topicword8").text(topic.topicword8);
+		$("#datatable").show();
+    }
+	
+	
+	function zoom(d,month) {
+	if(d!=root){
+	//alert("a");
+		 window.d=d;
+		  var k = r / d.r / 2;
+		  //console.log(r);
+		  x.domain([d.x - d.r, d.x + d.r]);
+		  y.domain([d.y - d.r, d.y + d.r]);
+		//console.log(x);
+		  var t = vis.transition()
+			  .duration(d3.event.altKey ? 7500 : 750);
+
+		  t.selectAll("circle")
+			  .attr("cx", function(d) { return x(d.x); })
+			  .attr("cy", function(d) { return y(d.y); })
+			  .attr("r", function(d) { return k * d.r; });
+		  
+		  t.selectAll("text")
+			  .attr("x", function(d) { return x(d.x); })
+			  .attr("y", function(d) { return y(d.y); })
+			  .attr("class", function(d) { return d.children ? "parent" : "child"; })
+			  .style("opacity", function(d) { return k * d.r > 20 ? 1 : 0; })
+//			  .style("font-size",function(d){return large;})
+			  .text(function(dd){
+				//如果是当前点击的那个节点，就修改圈内显示的字为标题名
+				var scircle=dd.name;
+				if(dd.name==d.name){
+//					var docsizes=data;
+//					console.log(docsizes);					
+						for(var j=0;j<docsizes.length;j++){						
+							if(d.name==docsizes[j]["name"]){																						
+								scircle=scircle+"        total number of documents:"+docsizes[j]["size"];
+								window.sscircle=scircle;
+								//console.log("dd");
+								
+								break;
+							}
+							else{scircle=dd.name;}
+							
+						}
+				}
+				return scircle;
+				
+				
+			  });
+			 // .on("click",function(d){alert("a");});
+			  
+			  //console.log(docs);
+			  window.d=d;
+			  window.d3=d3;
+			/*d3.selectAll(d)
+			.text(function(d){
+				/*var scircle=d.name;
+				for(var j=0;j<docs.length;j++){						
+					if(d.name==docs[j]["name"]){						
+						for(var i=1;i<5;i++){
+							var sdoc="doc"+i;
+							window.sdoc=sdoc;
+							scircle=scircle+docs[j][sdoc];
+							window.sscircle=scircle;
+							//console.log("dd");
+						}
+					}
+				}
+				return scircle;
+				return "aaaaaaa";
+				
+			  });*/
+				
+			
+		  node = d;
+		  $("#docdisplay").show();
+		  displaydocs(d,month);
+		  d3.event.stopPropagation();
+		  
+	  }
+	  else{
+		 zoomwin(d);
+	  }
+	  
+	}
+	function displaydocs(d,month){
+		var doc1;
+		for(var j=0;j<docs.length;j++){
+			//console.log(j);
+			if(d.name==docs[j]["name"]){						
+				var stitle1=docs[j]["doc1"];
+				var stitle2=docs[j]["doc2"];
+				var stitle3=docs[j]["doc3"];
+				var stitle4=docs[j]["doc4"];
+				//$("#docu1").text("aaa");
+				$("#doctitle1").text("Document1:"+stitle1);
+				$("#doctitle2").text("Document2:"+stitle2);
+				$("#doctitle3").text("Document3:"+stitle3);
+				$("#doctitle4").text("Document4:"+stitle4);
+				window.month=month;
+				/*
+				d3.text("NYT/"+month+"/raw/"+stitle1+".txt",function(data){				
+					$("#docu1").text(data);
+				})
+				
+				d3.text(escape("NYT/"+month+"/raw/"+stitle2+".txt"),function(data){
+				  /*var s="After months of sometimes contentious negotiations, the organizers of the America's Cup said on Friday that San Francisco would host the 34th race in late 2013. San Francisco bested Newport, R.I.; a city in Italy; and an undisclosed bidder believed to be in the Middle East. With its picturesque and windy bay, its international flair and its concentration of wealthy companies, San Francisco was considered the favorite. Lawrence J. Ellison's BMW Oracle Racing team, which won the Cup in February and thus had the right to choose the next site, is also from the area. Budget problems prevented San Francisco from paying an upfront fee to win the bid, so lawmakers offered the organizers rent-free access to waterfront property near the Bay Bridge where they can repair piers and build the needed facilities. To help the organizers recoup some of the estimated $300 million they are expected to invest in running the competition, the city also gave them longtime rights to redevelop the bayside land after the competition. \"We sought a venue that fulfills our promise -- to showcase the best sailors in the world competing on the fastest boats,\" said Richard Worth, chairman of the America's Cup Event Authority. 
+					"And hosting the America's Cup in San Francisco will realize that promise.\" San Francisco is the first American city to host the race since 1995, when the team from New Zealand won the Cup in San Diego. Mayor Gavin Newsom of San Francisco, who will soon become California's lieutenant governor, expects the event to generate more than $1 billion during the two years of preparations, preliminary races and final challenge. Sports economists have questioned that figure. Still, the race for the Cup -- the oldest existing trophy in sports -- is likely to attract thousands of spectators, sailors and members of the news media, as well as global television coverage. 
+					"San Francisco is the best place on Earth to host an event of this stature, and we could not be more proud to be the city that brings the America's Cup back home to the United States,\" Newsom said. 
+					"
+					if(data==null){$("#docu2").text(s);}
+					else{$("#docu2").text(data);}	*/
+//					$("#docu2").text(data);
+//				})
+				
+				
+/*				d3.text("NYT/"+month+"/raw/"+stitle3+".txt",function(data){					
+					$("#docu3").text(data);
+				})
+				d3.text("NYT/"+month+"/raw/"+stitle4+".txt",function(data){					
+					$("#docu4").text(data);
+				})
+				
+*/				
+				d3.json("documents"+month+".json",function(data){
+					window.data=data;
+//					console.log(data);
+//					var doccontents=data;
+//					window.doccontents=doccontents;
+					for(var k=0;k<data.length;k++){
+						if(data[k]["name"]==stitle1){
+							window.stitle1=stitle1;
+							console.log(k);
+							var scontent1=data[k]["content"];
+							$("#docu1").text(scontent1);							
+						}
+						else if(data[k]["name"]==stitle2){
+							var scontent2=data[k]["content"];
+							$("#docu2").text(scontent2);
+						}
+						else if(data[k]["name"]==stitle3){
+							var scontent3=data[k]["content"];
+							$("#docu3").text(scontent3);
+						}
+						else if(data[k]["name"]==stitle4){
+							var scontent4=data[k]["content"];
+							$("#docu4").text(scontent4);
+						}
+					}
+
+				})
+/*
+				var scontent1=doccontents[stitles1];
+				$("#docu1").text(scontent1);*/
+				break;
+			}
+		}
+	}
+	function zoomwin(d,i) {	
+	  var k = r / d.r / 2;
+	  x.domain([d.x - d.r, d.x + d.r]);
+	  y.domain([d.y - d.r, d.y + d.r]);
+
+	  var t = vis.transition()
+		  .duration(d3.event.altKey ? 7500 : 750);
+
+	  t.selectAll("circle")
+		  .attr("cx", function(d) { return x(d.x); })
+		  .attr("cy", function(d) { return y(d.y); })
+		  .attr("r", function(d) { return k * d.r; });
+
+	  t.selectAll("text")
+		  .attr("x", function(d) { return x(d.x); })
+		  .attr("y", function(d) { return y(d.y); })
+		  
+		  .style("opacity", function(d) { return k * d.r > 20 ? 1 : 0; })
+		  .text(function(d){return d.name;});
+		  
+		  
+		  //console.log(docs);
+		
+		
+	  node = d;
+	  d3.event.stopPropagation();
+	  
+	}
+	function gotofind(){
+		find($("#findwordtext").val());
+	}
+	function find(word){//找到的那个单词所在的圈是红色的
+	var num=0;
+	var hasfind=[];
+		for(var i=0;i<topics.length;i++){		
+					
+			if(word==topics[i]["name"]||word==topics[i]["topicword1"]||word==topics[i]["topicword2"]
+			||word==topics[i]["topicword3"]||word==topics[i]["topicword4"]||word==topics[i]["topicword5"]
+			||word==topics[i]["topicword6"]||word==topics[i]["topicword7"]){
+				console.log("yes!");
+				hasfind[num]=topics[i]["name"];
+				num++;
+				window.num=num; 
+				window.hasfind=hasfind;	
+			}
+		}
+		vis.selectAll("circle")
+			 .attr("class", function(d) {
+			 var sreturn;
+			 if(d.name=="business"&&d.children) sreturn="business";
+			 else  if(d.name=="world"&&d.children) sreturn="world";
+			 else if(d.name=="nyregion"&&d.children) sreturn="nyregion";
+			 else if(d.name=="arts"&&d.children) sreturn="arts"; 
+			 else if(d.name=="books"&&d.children) sreturn="books"; 
+			 else if(d.name=="sports"&&d.children) sreturn="sports"; 
+			 else if(!d.children&&d.parent.name=="sports") sreturn="sportschild";
+			 else if(!d.children&&d.parent.name=="books")   sreturn="bookschild";
+			 else if(!d.children&&d.parent.name=="nyregion")   sreturn="nyregionchild";
+			 else if(!d.children&&d.parent.name=="business")  sreturn="businesschild";
+			 else if(!d.children&&d.parent.name=="world")  sreturn="worldchild";
+			 else if(!d.children&&d.parent.name=="arts")  sreturn="artschild";
+			 else sreturn="parent";
+			 for(var i=0;i<num;i++){
+				if(d.name==hasfind[i]) {sreturn="findit";}
+			 }
+			 return sreturn;
+			 });
+	}
+	
+/*	function play(){
+	
+		setTimeout("init('results2.json','topics2.json','doctitles2.json','documents2.json',2)",2000);
+		setTimeout("init('results3.json','topics3.json','doctitles3.json','documents3.json',3)",3000);
+		setTimeout("init('results4.json','topics4.json','doctitles4.json','documents4.json',4)",4000);
+		setTimeout("init('results5.json','topics5.json','doctitles5.json','documents5.json',5)",5000);
+		setTimeout("init('results6.json','topics6.json','doctitles6.json','documents6.json',6)",6000);
+		setTimeout("init('results7.json','topics7.json','doctitles7.json','documents7.json',7)",7000);
+		setTimeout("init('results8.json','topics8.json','doctitles8.json','documents8.json',8)",8000);
+		setTimeout("init('results9.json','topics9.json','doctitles9.json','documents9.json',9)",9000);
+		setTimeout("init('results10.json','topics10.json','doctitles10.json','documents10.json',10)",10000);
+		setTimeout("init('results11.json','topics11.json','doctitles11.json','documents11.json',11)",11000);
+		setTimeout("init('results12.json','topics12.json','doctitles12.json','documents12.json',12)",12000);
+			
+	}
+*/
+	function play(){
+	    // x.domain([d.x - d.r, d.x + d.r]);
+		// y.domain([d.y - d.r, d.y + d.r]);
+		//console.log(x);
+		//var t = vis.transition();//起到动画过程的平滑效果
+		//t.selectAll("circle")
+		//.attr("r", function(d) { if(d.name=="art")return 0; else if(!d.children&&d.parent.name=="arts") return 3*d.r; else return d.r;})
+		//.attr("cx",function(d){return d.x;})
+		//.attr("cy",function(d){return d.y;})
+		
+		//.attr("transform", function(d) { return "translate(" + d + ")"; });
+		//d3.selectAll("circle#arts").remove();
+		d3.json("resultstrans.json",function(json){ 
+		
+
+		  var pack = d3.layout.pack()
+			  .size([width - 4, height - 4])
+			  .value(function(d) {  
+				return gScale(d.size); 
+			  });
+
+		  gScale = d3.scale.linear()
+							 .domain([0, json.total_occurrences])
+							 .range([0, 350]);//decide the scale of radium(in pixel) of the circle
+		 
+		  var node = vis.data([json]).selectAll("g.node")
+					 .data(pack.nodes)
+		  
+		  node.enter().append("g")
+			  .attr("class", function(d) {if(d.name=="business") return "business";
+			  else  if(d.name=="world"&&d.children) return "world";
+			  else if(d.name=="nyregion"&&d.children) return "nyregion";
+			  else if(d.name=="arts"&&d.children) return "arts"; 
+			  else if(d.name=="books"&&d.children) return "books"; 
+			  else if(d.name=="sports"&&d.children) return "sports"; 
+			  else if(!d.children&&d.parent.name=="sports") return "sportschild";
+			  else if(!d.children&&d.parent.name=="books")   return "bookschild";
+			  else if(!d.children&&d.parent.name=="nyregion")   return "nyregionchild";
+			  else if(!d.children&&d.parent.name=="business")  return "businesschild";
+			  else if(!d.children&&d.parent.name=="world")  return "worldchild";
+			  else if(!d.children&&d.parent.name=="arts")  return "artschild";
+ 			  else return d.children ? "parent" : "child";})
+			  .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+		  node.append("title")
+			  .text(function(d) { return d.name + (d.children ? "" : ": " + format(d.size)); });
+
+		  node.append("circle")
+				.attr("r", function(d) { return d.r; });
+
+		  var textes=node.filter(function(d) { return !d.children; }).append("text")
+		  textes.attr("text-anchor", "middle")
+			  .attr("dy", ".3em")    
+			  .text(function(d) { return d.name });
+		
+			pack.value(function(d) {
+		  //SYMBOLIZING BY NEW VALUE
+				return gScale(d.size2)
+				}) 
+
+			node.data([json]).selectAll("g")
+						 .data(pack.nodes)
+			 
+			node.transition()
+			  .duration(4500)
+			  .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })//.attr('fill','red');
+
+			d3.selectAll("circle")
+			  .transition()
+			  .duration(4500)  
+			  .attr("r", function(d) { return d.r });
+
+			textes.text(function(d) { return d.georef_count }); 
+		
+		});
+	}
+
+    </script>
+
+  </body>
+</html>
